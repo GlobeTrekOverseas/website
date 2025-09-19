@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Processing - Globetrek Overseas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Header -->
+    <style>
+      .header {
+        background-color: white;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: #024672;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-menu a:hover {
+        color: #2c3e50;
+      }
+
+      .logo img {
+        height: 80px;
+        width: auto;
+      }
+
+      /* Dropdown Styles */
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: var(--shadow);
+        border-radius: 5px;
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 100;
+        list-style: none;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .dropdown-menu li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      .dropdown-menu a:hover {
+        background: var(--light);
+        color: var(--secondary);
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: #eee;
+        margin: 5px 0;
+      }
+
+      /* Mobile Navigation */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--secondary);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="font-poppins bg-gray-100 text-gray-800">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="../index.html" class="logo">
+          <img src="../images\GTO.png" alt="Globetrek Overseas" class="w-full w-auto h-[68px]" />
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="about us.html">About Us</a></li>
+
+          <!-- Courses Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="business-management.html"><i class="fas fa-chart-line"></i> Business & Management</a>
+              </li>
+              <li>
+                <a href="engineering.html"><i class="fas fa-cogs"></i> Engineering</a>
+              </li>
+              <li>
+                <a href="medicine.html"><i class="fas fa-heartbeat"></i> Medicine & Healthcare</a>
+              </li>
+              <li>
+                <a href="law.html"><i class="fas fa-gavel"></i> Law</a>
+              </li>
+              <li>
+                <a href="IELTS.html"><i class="fas fa-book"></i>IELTS</a>
+              </li>
+              <li>
+                <a href="PTE.html"><i class="fas fa-book"></i>PTE</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Our Services Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="course counselling.html"><i class="fas fa-user-graduate"></i> Career & Course
+                  Counseling</a>
+              </li>
+              <li>
+                <a href="university selection.html"><i class="fas fa-university"></i> University Selection &
+                  Applications</a>
+              </li>
+              <li>
+                <a href="visa assistance.html"><i class="fas fa-passport"></i> Visa Assistance</a>
+              </li>
+              <li>
+                <a href="scholarships.html"><i class="fas fa-hand-holding-usd"></i> Scholarships &
+                  Funding Guidance</a>
+              </li>
+              <li>
+                <a href="pre departure.html"><i class="fas fa-plane-departure"></i> Pre-Departure &
+                  Post-Arrival Support</a>
+              </li>
+              <li>
+                <a href="channel partner.html"><i class="fas fa-handshake"></i> Channel Partner Support</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Study Destinations Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Study Destinations <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="./united states.html">
+                  <img src="../images/usa-flag.png" alt="USA" class="w-5 h-5"> United States</a>
+              </li>
+              <li>
+                <a href="./uk.html">
+                  <img src="../images/uk-flag.png" alt="USA" class="w-5 h-5"> United Kingdom</a>
+              </li>
+              <li>
+                <a href="./australia.html"><img src="../images/au-flag.png" alt="USA" class="w-5 h-5"> Australia</a>
+              </li>
+              <li>
+                <a href="./switzerland.html"><img src="../images/sw-flag.png" alt="USA" class="w-5 h-5"> Switzerland</a>
+              </li>
+              <li>
+                <a href="./germany.html"><img src="../images/ge-flag.png" alt="USA" class="w-5 h-5"> Germany</a>
+              </li>
+              <li class="dropdown-divider"></li>
+            </ul>
+          </li>
+          <li><a href="./pages/success stories.html">Success Stories</a></li>
+          <li><a href="./pages/News&Articles.html">News&Articles</a></li>
+          <li><a href="./pages/contact us.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- Header Section -->
+    <header class="bg-blue-900 text-white py-6">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center">Visa Processing Services</h1>
+        <p class="text-center mt-2 text-sm sm:text-base">Your hassle-free path to studying, working, or traveling abroad</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Intro Section -->
+      <section class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-blue-900">Simplifying Your Visa Journey</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+          At Globetrek Overseas, we understand that obtaining a visa can be one of the most complex and crucial steps in your journey to study, work, or travel abroad. Our expert team simplifies this process, ensuring a smooth and stress-free experience.
+        </p>
+      </section>
+
+      <!-- Our Visa Processing Services Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-blue-900 text-center mb-8">Our Visa Processing Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h3 class="text-lg font-semibold text-blue-900">Eligibility Assessment</h3>
+            <p class="mt-2 text-gray-600 text-sm">
+              Comprehensive evaluation of your eligibility for the visa category (Student Visa, Work Visa, Visitor Visa, etc.). Guidance on meeting the specific requirements of the destination country.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h3 class="text-lg font-semibold text-blue-900">Document Preparation</h3>
+            <p class="mt-2 text-gray-600 text-sm">
+              Assistance in gathering and organizing essential documents, including academic credentials, financial proof (bank statements, sponsorship letters), passport and photographs, acceptance letters (for student visas), and work authorization documents (for work visas).
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h3 class="text-lg font-semibold text-blue-900">Application Submission</h3>
+            <p class="mt-2 text-gray-600 text-sm">
+              Accurate completion of visa application forms and submission through official channels.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h3 class="text-lg font-semibold text-blue-900">Interview Preparation</h3>
+            <p class="mt-2 text-gray-600 text-sm">
+              Mock interview sessions to help you confidently face visa officers, along with tips and strategies to answer common questions effectively.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <h3 class="text-lg font-semibold text-blue-900">Follow-Up & Updates</h3>
+            <p class="mt-2 text-gray-600 text-sm">
+              Regular updates on your application status and prompt responses to queries or additional document requests from the visa authorities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="text-center bg-blue-900 text-white py-12 rounded-lg">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Start Your Visa Application Today</h2>
+        <p class="mt-4 text-sm sm:text-base max-w-xl mx-auto mb-8">
+          Let us guide you through the visa process with ease and confidence. Contact us to begin your journey!
+        </p>
+        <a href="contact us.html" id="contactButton" class="mt-6 bg-white text-blue-900 font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">
+          Get in Touch
+        </a>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer" style="
+            background-color: white;
+            color: #023e65;
+            padding: 40px 0 20px;
+            border-top: 1px solid #eee;
+          ">
+      <div class="footer-grid" style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 30px;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+            ">
+        <!-- Company Info Column -->
+        <div class="footer-col">
+          <a href="../index.html" class="logo" style="text-align: center">
+            <img src="../images/GTO.png" alt="Globetrek Overseas" style="height: 80px; margin-bottom: 20px" />
+          </a>
+          <p class="footer-about" style="
+                  text-align:  right center;
+                  line-height: 1.6;
+                  margin-bottom: 25px;
+                  color: #023e65;
+                ">
+            <span style="font-weight: bold;"> We are a leading study abroad consultancy dedicated to helping
+              students achieve their international education dreams.</span>
+          </p>
+          <div class="footer-section">
+            <h3 style="
+                    text-align: right center;
+                    margin-bottom: 15px;
+                    font-size: 1.4rem;
+                    color: #015f18;
+                  ">
+              <span style="font-weight: bold;">Follow Us</span>
+            </h3>
+            <div class="social-links" style="
+                    display: flex;
+                    justify-content:  right center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                  ">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" class="social-icon" style="
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      transition: all 0.5s ease;
+                    " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/globetrek-overseas/" class="social-icon" style="
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      transition: all 0.5s ease;
+                    " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/919311331899" target="_blank" class="social-icon" style="
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      transition: all 0.3s ease;
+                    " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h3 class="footer-links-title font-bold !text-[#023e65]" style="
+                  font-size: 1.2rem;
+                  margin-bottom: 20px;
+                  position: relative;
+                  padding-bottom: 10px;
+                  color: #333;
+                ">
+            Quick Links
+            <span style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    background-color: #02406a;
+                  "></span>
+          </h3>
+          <ul class="footer-links" style="list-style: none; padding: 0">
+            <li style="margin-bottom: 10px">
+              <a href="about us.html" style="
+                      color: #01500c;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">About Us</span></a>
+
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Our Services</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Study Destinations</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="success stories.html" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Success Stories</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">News&Article</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="contact us.html" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer-col">
+          <h3 class="footer-contact-title font-bold !text-[#023e65]" style="
+                  font-size: 1.2rem;
+                  margin-bottom: 20px;
+                  position: relative;
+                  padding-bottom: 10px;
+                  color: #333;
+                ">
+            Contact Us
+            <span style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 2px;
+                    background-color: #023e65;
+                  "></span>
+          </h3>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0; line-height: 1.5; color: #023e65">
+              <span style="font-weight: bold;"> 618 Tower-A, ATS BOUQUET Block B<br>Sector 132 Noida,<br> Uttar
+                Pradesh 201304</span>
+            </p>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <div>
+              <p style="margin: 0 0 5px 0">
+                <a href="tel:+919311331899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 93113 31899</span></a>
+              </p>
+              <p style="margin: 0">
+                <a href="tel:+919211313899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 92113 13899</span></a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-envelope" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0">
+              <a href="mailto:Headoffice@globetrekoverseas.com" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">Headoffice@globetrekoverseas.com</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="
+              text-align: center;
+              padding-top: 30px;
+              margin-top: 30px;
+              border-top: 1px solid #eee;
+            ">
+        <p style="margin: 0; font-size: 0.9rem; color: #023e65">
+          <span style="font-weight: bold;">&copy;2023 Globetrek Overseas. All Rights Reserved.</span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

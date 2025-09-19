@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GlobetrekOverseas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root {
+        --primary: #025c0e;
+        --secondary: #10b981;
+        --accent: #44c14b;
+        --dark: #003479;
+        --light: #f8fafc;
+        --gray: #64748b;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: #f1f5f9;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(135deg, var(--white), #f1f5f9);
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: var(--accent);
+      }
+
+      .logo-img {
+        height: 70px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--accent);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(30, 64, 175, 0.7), rgba(30, 64, 175, 0.7)), url('contact-us-image.png') center/cover no-repeat;
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 3rem 0;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .contact-info {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-info h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--secondary);
+      }
+
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .info-item i {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-right: 1rem;
+        min-width: 30px;
+      }
+
+      .info-item div {
+        flex: 1;
+      }
+
+      .info-item h3 {
+        margin-bottom: 0.3rem;
+        color: var(--dark);
+      }
+
+      .info-item p {
+        color: var(--gray);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        justify-content: center;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .social-links a:hover {
+        background: var(--secondary);
+        transform: translateY(-3px);
+      }
+
+      /* Form Styles */
+      .form-container {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-header h2 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+      }
+
+      .form-header p {
+        color: var(--gray);
+      }
+
+      .form-group {
+        margin-bottom: 1.2rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--dark);
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .form-group select option {
+        padding: 0.5rem;
+      }
+
+      .form-group select option::before {
+        content: attr(data-emoji);
+        margin-right: 0.5rem;
+      }
+
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .checkbox-group input {
+        width: auto;
+        margin-right: 10px;
+      }
+
+      .submit-btn {
+        background: var(--secondary);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.4s;
+      }
+
+      .submit-btn:hover {
+        background: #0da271;
+      }
+
+      .submit-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .progress-container {
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 20px;
+        background: #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--secondary), #34d399);
+        width: 0%;
+        transition: width 0.5s ease;
+      }
+
+      .progress-text {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: var(--dark);
+        line-height: 20px;
+        font-weight: 600;
+      }
+
+      .progress-info {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .toggle-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+      }
+
+      .toggle-btn:hover {
+        background: #1e40af;
+      }
+
+      .toggle-btn i {
+        margin-right: 0.5rem;
+      }
+
+      .form-note {
+        text-align: center;
+        color: var(--gray);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Map Section */
+      .map-section {
+        margin-top: 3rem;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-section iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+      }
+
+      /* Footer */
+      footer {
+        background: white;
+        color: #04107c;
+        padding: 40px 0 20px;
+        border-top: 1px solid #eee;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-col {
+        text-align: center;
+      }
+
+      .footer-col img {
+        height: 80px;
+        margin-bottom: 20px;
+      }
+
+      .footer-about {
+        line-height: 1.6;
+        margin-bottom: 25px;
+        color: #150369;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        color: #015f18;
+      }
+
+      .footer-links-title,
+      .footer-contact-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        color: #333;
+      }
+
+      .footer-links-title::after,
+      .footer-contact-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: #02406a;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #01500c;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+      }
+
+      .contact-item {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .contact-item i {
+        margin-right: 10px;
+        margin-top: 5px;
+        color: #01205e;
+      }
+
+      .contact-item p {
+        margin: 0;
+        line-height: 1.5;
+        color: #01205e;
+      }
+
+      .contact-item a {
+        color: #01205e;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        color: var(--secondary);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 30px;
+        border-top: 1px solid #eee;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #01205e;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          margin-top: 1rem;
+          justify-content: center;
+        }
+
+        nav li {
+          margin: 0 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .map-section iframe {
+          height: 300px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo {
+          font-size: 1.5rem;
+        }
+
+        .logo-img {
+          height: 30px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+        }
+
+        nav li {
+          margin: 0.5rem;
+        }
+
+        .hero {
+          padding: 2rem 0;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .info-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .info-item i {
+          margin-right: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animated {
+        animation: fadeIn 0.8s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+    </style>
+    <!-- Header styles -->
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #034570;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+        --text: #333;
+        --text-light: #7f8c8d;
+        --white: #fff;
+        --black: #000;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      .header {
+        background-color: white;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: #024672;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-menu a:hover {
+        color: #2c3e50;
+      }
+
+      .logo img {
+        height: 80px;
+        width: auto;
+      }
+
+      /* Dropdown Styles */
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: var(--shadow);
+        border-radius: 5px;
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 100;
+        list-style: none;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .dropdown-menu li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      .dropdown-menu a:hover {
+        background: var(--light);
+        color: var(--secondary);
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: #eee;
+        margin: 5px 0;
+      }
+
+      /* Mobile Navigation */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--secondary);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="../index.html" class="logo">
+          <img src="../images\GTO.png" alt="Globetrek Overseas" class="w-full w-auto h-[68px]" />
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="about us.html">About Us</a></li>
+
+          <!-- Courses Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="business-management.html"><i class="fas fa-chart-line"></i> Business & Management</a>
+              </li>
+              <li>
+                <a href="engineering.html"><i class="fas fa-cogs"></i> Engineering</a>
+              </li>
+              <li>
+                <a href="medicine.html"><i class="fas fa-heartbeat"></i> Medicine & Healthcare</a>
+              </li>
+              <li>
+                <a href="law.html"><i class="fas fa-gavel"></i> Law</a>
+              </li>
+              <li>
+                <a href="IELTS.html"><i class="fas fa-book"></i>IELTS</a>
+              </li>
+              <li>
+                <a href="PTE.html"><i class="fas fa-book"></i>PTE</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Our Services Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#"><i class="fas fa-user-graduate"></i> Career & Course
+                  Counseling</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-university"></i> University Selection &
+                  Applications</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-passport"></i> Visa Assistance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarships &
+                  Funding Guidance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-plane-departure"></i> Pre-Departure &
+                  Post-Arrival Support</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-handshake"></i> Channel Partner Support</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Study Destinations Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Study Destinations <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="./united states.html">
+                  <i class="fas fa-landmark"></i> United States</a>
+              </li>
+              <li>
+                <a href="./UK.html">
+                  <i class="fas fa-landmark"></i> United Kingdom</a>
+              </li>
+              <li>
+                <a href="./australia.html"><i class="fas fa-landmark"></i> Australia</a>
+              </li>
+              <li>
+                <a href="./switzerland.html"><i class="fas fa-landmark"></i> Switzerland</a>
+              </li>
+              <li>
+                <a href="germany.html"><i class="fas fa-landmark"></i> Germany</a>
+              </li>
+              <li class="dropdown-divider"></li>
+            </ul>
+          </li>
+          <li><a href="success stories.html">Success Stories</a></li>
+          <li><a href="News&Articles.html">News&Articles</a></li>
+          <li><a href="contact us.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Get in Touch With Us</h1>
+        <p>Our team of experts is ready to help you achieve your study abroad dreams. Reach out to us for free counselling and guidance.</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info animated">
+          <h2>Contact Information</h2>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Our Office</h3>
+              <p> 618 Tower-A, ATS BOUQUET Block B Sector 132 Noida<br> Uttar Pradesh 201304</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+919311331899">+91 93113 31899</a><br><a href="tel:+919211313899">+91 92113 13899</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email Address</h3>
+              <p><a href="mailto:Headoffice@globetrekoverseas.com">Headoffice@globetrekoverseas.com</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h3>Working Hours</h3>
+              <p>Monday-Friday: 9am - 6pm<br>Saturday: Off<br>Sunday: Off</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/globetrek-overseas/" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919311331899" aria-label="Contact us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Counselling Form -->
+        <div class="form-container animated delay-1">
+          <div class="form-header">
+            <h2>🎓 Get FREE Counselling Today!</h2>
+            <p>Enter your details and our expert will reach out to you to discuss your plans. By the way, all our services are completely free!</p>
+          </div>
+          <button class="toggle-btn" onclick="toggleProgress()"><i class="fas fa-eye"></i> Hide Progress</button>
+          <div class="progress-container" id="progressContainer">
+            <p class="progress-info" id="progressInfo">0 of 9 fields completed</p>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+              <!-- <span class="progress-text" id="progressText">0% Complete - Let's get started! 🚀</span> -->
+            </div>
+          </div>
+          <form id="counsellingForm">
+            <div class="form-group">
+              <label for="firstName">First name*</label>
+              <input type="text" id="firstName" name="firstName" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name*</label>
+              <input type="text" id="lastName" name="lastName" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address*</label>
+              <input type="email" id="email" name="email" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile number*</label>
+              <input type="tel" id="mobile" name="mobile" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="studyDestination">Your preferred study destination*</label>
+              <select id="studyDestination" name="studyDestination" required aria-required="true">
+                <option value="">Choose your destination</option>
+                <option value="United States" data-emoji="🇺🇸">United States</option>
+                <option value="Australia" data-emoji="🇦🇺">Australia</option>
+                <option value="Canada" data-emoji="🇨🇦">Canada</option>
+                <option value="Switzerland" data-emoji="🇨🇭">Switzerland</option>
+                <option value="Germany" data-emoji="🇩🇪">Germany</option>
+                <option value="Netherlands" data-emoji="🇳🇱">Netherlands</option>
+                <option value="United Kingdom" data-emoji="🇬🇧">United Kingdom</option>
+                <option value="Others" data-emoji="🌍">Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="startTime">When would you like to start?*</label>
+              <select id="startTime" name="startTime" required aria-required="true">
+                <option value="">Select timeline</option>
+                <option value="Immediately" data-emoji="⚡">Immediately</option>
+                <option value="Within3Months" data-emoji="📅">Within 3 months</option>
+                <option value="Within6Months" data-emoji="🗓️">Within 6 months</option>
+                <option value="Within12Months" data-emoji="📆">Within 12 months</option>
+                <option value="NotSureYet" data-emoji="🤔">Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="counsellingMode">Preferred mode of counselling*</label>
+              <select id="counsellingMode" name="counsellingMode" required aria-required="true">
+                <option value="">Select mode</option>
+                <option value="Online" data-emoji="💻">Virtual Counseling</option>
+                <option value="InPerson" data-emoji="🏢">In-person</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="studyLevel">Preferred study level*</label>
+              <select id="studyLevel" name="studyLevel" required aria-required="true">
+                <option value="">Select level</option>
+                <option value="EnglishLanguage" data-emoji="🗣️">English Language</option>
+                <option value="School" data-emoji="🏫">School</option>
+                <option value="Undergraduate" data-emoji="🎓">Undergraduate</option>
+                <option value="Postgraduate" data-emoji="📚">Postgraduate</option>
+                <option value="Doctorate" data-emoji="👨‍🎓">Doctorate</option>
+                <option value="UniversityPreparation" data-emoji="📖">University Preparation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="funding">How would you fund your education?*</label>
+              <select id="funding" name="funding" required aria-required="true">
+                <option value="">Select funding method</option>
+                <option value="SelfFunded" data-emoji="💰">Self-funded</option>
+                <option value="Scholarship" data-emoji="🏆">Scholarship</option>
+                <option value="EducationLoan" data-emoji="🏦">Education loan</option>
+                <option value="Others" data-emoji="📋">Others</option>
+              </select>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="terms" name="terms" required aria-required="true">
+              <label for="terms">I agree to GlobetrekOverseas Terms and privacy policy</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="contact" name="contact">
+              <label for="contact">Please contact me by phone, email, or SMS to assist with my enquiry</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="updates" name="updates">
+              <label for="updates">I would like to receive updates and offers from GlobetrekOverseas</label>
+            </div>
+            <p class="form-note">Complete all required fields above to unlock your free counselling session! 🔓</p>
+            <button type="submit" class="submit-btn" id="submitBtn">🚀 Avail FREE Counselling</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div class="map-section animated delay-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28721026.239075057!2d77.3805309!3d28.5101096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce91c984af61b%3A0xf7c472e577438194!2sGlobeTrek%20Overseas!5e0!3m2!1sen!2sin!4v1758085158368!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="
+            background-color: white;
+            color: #023e65;
+            padding: 40px 0 20px;
+            border-top: 1px solid #eee;
+          ">
+      <div class="footer-grid" style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 30px;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+            ">
+        <!-- Company Info Column -->
+        <div class="footer-col">
+          <a href="../index.html" class="logo" style="text-align: center">
+            <img src="../images\GTO.png" alt="Globetrek Overseas" style="height: 80px; margin-bottom: 20px" />
+          </a>
+          <p class="footer-about" style="
+                  text-align:  right center;
+                  line-height: 1.6;
+                  margin-bottom: 25px;
+                  color: #023e65;
+                ">
+            <span style="font-weight: bold;"> We are a leading study abroad consultancy dedicated to helping
+              students achieve their international education dreams.</span>
+          </p>
+          <div class="footer-section">
+            <h3 style="
+                    text-align: right center;
+                    margin-bottom: 15px;
+                    font-size: 1.4rem;
+                    color: #015f18;
+                  ">
+              <span style="font-weight: bold;">Follow Us</span>
+            </h3>
+            <div class="social-links" style="
+                    display: flex;
+                    justify-content:  right center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                  ">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" class="social-icon" style="
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      transition: all 0.5s ease;
+                    " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/globetrek-overseas/" class="social-icon" style="
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      transition: all 0.5s ease;
+                    " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/919311331899" target="_blank" class="social-icon" style="
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      transition: all 0.3s ease;
+                    " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h3 class="footer-links-title font-bold !text-[#023e65]" style="
+                  font-size: 1.2rem;
+                  margin-bottom: 20px;
+                  position: relative;
+                  padding-bottom: 10px;
+                  color: #333;
+                ">
+            Quick Links
+            <span style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    background-color: #02406a;
+                  "></span>
+          </h3>
+          <ul class="footer-links" style="list-style: none; padding: 0">
+            <li style="margin-bottom: 10px">
+              <a href="./about us.html" style="
+                      color: #01500c;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">About Us</span></a>
+
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Our Services</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Study Destinations</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./success stories.html" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Success Stories</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./News&Articles.html" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">News&Article</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./contact us.html" style="
+                      color: #2D6F41;
+                      text-decoration: none;
+                      transition: color 0.3s;
+                    "> <span style="font-weight: bold;">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer-col">
+          <h3 class="footer-contact-title font-bold !text-[#023e65]" style="
+                  font-size: 1.2rem;
+                  margin-bottom: 20px;
+                  position: relative;
+                  padding-bottom: 10px;
+                  color: #333;
+                ">
+            Contact Us
+            <span style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 2px;
+                    background-color: #023e65;
+                  "></span>
+          </h3>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0; line-height: 1.5; color: #023e65">
+              <span style="font-weight: bold;"> 618 Tower-A, ATS BOUQUET Block B<br>Sector 132 Noida,<br> Uttar
+                Pradesh 201304</span>
+            </p>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <div>
+              <p style="margin: 0 0 5px 0">
+                <a href="tel:+919311331899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 93113 31899</span></a>
+              </p>
+              <p style="margin: 0">
+                <a href="tel:+919211313899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 92113 13899</span></a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-envelope" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0">
+              <a href="mailto:Headoffice@globetrekoverseas.com" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">Headoffice@globetrekoverseas.com</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="
+              text-align: center;
+              padding-top: 30px;
+              margin-top: 30px;
+              border-top: 1px solid #eee;
+            ">
+        <p style="margin: 0; font-size: 0.9rem; color: #023e65">
+          <span style="font-weight: bold;">&copy;2023 Globetrek Overseas. All Rights Reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById('counsellingForm');
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+      const progressInfo = document.getElementById('progressInfo');
+      const progressContainer = document.getElementById('progressContainer');
+      const toggleBtn = document.querySelector('.toggle-btn');
+      const submitBtn = document.getElementById('submitBtn');
+      let isProgressVisible = true;
+
+      const requiredFields = [
+        'firstName', 'lastName', 'email', 'mobile',
+        'studyDestination', 'startTime', 'counsellingMode',
+        'studyLevel', 'funding', 'terms'
+      ];
+
+      function updateProgress() {
+        const totalFields = requiredFields.length;
+        let filledFields = 0;
+
+        requiredFields.forEach(id => {
+          const field = document.getElementById(id);
+          if (field.type === 'checkbox') {
+            if (field.checked) filledFields++;
+          } else if (field.value.trim() !== '' && !(field.tagName === 'SELECT' && field.value === '')) {
+            filledFields++;
+          }
+        });
+
+        const percentage = Math.round((filledFields / totalFields) * 100);
+        progressFill.style.width = `${percentage}%`;
+        progressInfo.textContent = `${filledFields} of ${totalFields} fields completed`;
+        progressText.textContent = filledFields === totalFields
+          ? '100% Complete - Ready to submit! 🎉'
+          : `${percentage}% Complete - Let's get started! 🚀`;
+        submitBtn.disabled = filledFields !== totalFields;
+      }
+
+      function toggleProgress() {
+        isProgressVisible = !isProgressVisible;
+        progressContainer.style.display = isProgressVisible ? 'block' : 'none';
+        toggleBtn.innerHTML = isProgressVisible
+          ? '<i class="fas fa-eye"></i> Hide Progress'
+          : '<i class="fas fa-eye-slash"></i> Show Progress';
+      }
+
+      requiredFields.forEach(id => {
+        const field = document.getElementById(id);
+        field.addEventListener('input', updateProgress);
+        field.addEventListener('change', updateProgress);
+      });
+
+      // form.addEventListener('submit', (e) => {
+      //   e.preventDefault();
+      //   if (!document.getElementById('terms').checked) {
+      //     alert('You must agree to the Terms and Privacy Policy to proceed.');
+      //     return;
+      //   }
+      //   alert('Thank you for your submission! Our counsellor will contact you shortly.');
+      //   form.reset();
+      //   updateProgress();
+      // });
+
+      // Social icon animation
+      function animateIcon(element) {
+        element.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+          element.style.transform = 'scale(1)';
+        }, 200);
+      }
+
+      // Initial progress update
+      updateProgress();
+    </script>
+    <script>
+      // Enable button when required fields are filled
+      form.addEventListener("input", () => {
+        submitBtn.disabled = !form.checkValidity();
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Collect form data
+        const formData = new FormData(form);
+        console.log(formData.getAll(""));
+        let message = "📋 *New Counselling Enquiry* %0A%0A";
+        for (let [key, value] of formData.entries()) {
+          // if (key === "terms") value = "✔️ Agreed";
+          // if (key === "contact") value = "✔️ Wants Contact";
+          // if (key === "updates") value = "✔️ Subscribed to Updates";
+          if (!(key === "terms") && !(key === "contact") && !(key === "updates") && value) {
+            message += `*${key}*: ${value}%0A`;
+          }
+        }
+        console.log(message)
+
+        // WhatsApp number (with country code, no + or spaces)
+        const whatsappNumber = "92113 13899"; // 🔹 replace with your WhatsApp number
+
+        // Create WhatsApp link
+        // const whatsappURL = `https://api.whatsapp.com/send/phone=${whatsappNumber}?text=${message}&type=phone_number&app_absent=0`;
+        const whatsappURL = `https://api.whatsapp.com/send?phone=91+9211313899&text=${message}`
+
+        // Redirect user to WhatsApp
+        window.open(whatsappURL, "_blank");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study in Canada - GlobetrekOverseas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #C8102E;
+        --secondary: #FFCD00;
+        --dark: #1A1A1A;
+        --light: #F5F5F5;
+        --gray: #6c757d;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 70px;
+        margin-right: 20px;
+      }
+
+      .logo-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary);
+      }
+
+      nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.3s;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/canada.png');
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 70px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 0 20px;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: 2px solid var(--primary);
+      }
+
+      .btn:hover {
+        background-color: transparent;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Why Canada Section */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .feature-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      /* Intakes Section */
+      .intakes-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-top: 30px;
+      }
+
+      .intake-card {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .intake-card:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .intake-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .deadline-list {
+        list-style: none;
+        margin-top: 15px;
+      }
+
+      .deadline-list li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .deadline-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      /* Costs Section */
+      .costs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .cost-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 30px;
+        transition: transform 0.3s;
+      }
+
+      .cost-card:hover {
+        transform: scale(1.03);
+      }
+
+      .cost-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cost-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin: 15px 0;
+      }
+
+      .cost-details {
+        list-style: none;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .cost-details li {
+        margin-bottom: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .cost-details li:last-child {
+        border-bottom: none;
+      }
+
+      /* Working Section */
+      .working-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-top: 30px;
+      }
+
+      .working-info {
+        margin-bottom: 30px;
+      }
+
+      .working-info h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .working-list {
+        list-style: none;
+        margin-top: 15px;
+      }
+
+      .working-list li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .working-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      /* Documents Section */
+      .documents-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-top: 30px;
+      }
+
+      .document-category {
+        margin-bottom: 30px;
+      }
+
+      .document-category h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .checklist {
+        list-style: none;
+      }
+
+      .checklist li {
+        margin-bottom: 10px;
+        padding-left: 35px;
+        position: relative;
+      }
+
+      .checklist li input[type="checkbox"] {
+        position: absolute;
+        left: 0;
+        top: 3px;
+        width: 20px;
+        height: 20px;
+        accent-color: var(--primary);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s, transform 0.8s;
+      }
+
+      .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Modal/Popup */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        padding: 30px;
+        position: relative;
+        animation: modalFadeIn 0.3s;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--gray);
+        transition: color 0.3s;
+      }
+
+      .close-modal:hover {
+        color: var(--primary);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        nav ul {
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          flex-direction: column;
+          padding: 20px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header-container {
+          padding: 10px 15px;
+        }
+
+        .logo img {
+          height: 30px;
+        }
+
+        .logo-text {
+          font-size: 1.2rem;
+        }
+
+        .hero {
+          height: 70vh;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .btn {
+          padding: 10px 20px;
+        }
+      }
+    </style>
+    <!-- Header styles -->
+    <style>
+      .header {
+        background-color: white;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: #024672;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-menu a:hover {
+        color: #2c3e50;
+      }
+
+      .logo img {
+        height: 80px;
+        width: auto;
+      }
+
+      /* Dropdown Styles */
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: var(--shadow);
+        border-radius: 5px;
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 100;
+        list-style: none;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .dropdown-menu li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      .dropdown-menu a:hover {
+        background: var(--light);
+        color: var(--secondary);
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: #eee;
+        margin: 5px 0;
+      }
+
+      /* Mobile Navigation */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--secondary);
+        cursor: pointer;
+      }
+    </style>
+    <!-- Footer -->
+    <style>
+      .footer {
+        background-color: white;
+        padding: 50px 0 20px;
+        color: #024c7d;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-col {
+        margin-bottom: 20px;
+      }
+
+      .footer-col h3 {
+        color: #02436f;
+        margin-bottom: 20px;
+        font-size: 1.125rem;
+      }
+
+      .footer-about {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #02446f;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #2c3e50;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #003c64;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        color: #034571;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: #2c3e50;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 30px;
+        border-top: 1px solid #eee;
+        color: #013c63;
+        font-size: 0.875rem;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="../index.html" class="logo">
+          <img src="../images\GTO.png" alt="Globetrek Overseas" class="w-full w-auto h-[68px]" />
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="./pages/about us.html">About Us</a></li>
+
+          <!-- Courses Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="business-management.html"><i class="fas fa-chart-line"></i> Business & Management</a>
+              </li>
+              <li>
+                <a href="engineering.html"><i class="fas fa-cogs"></i> Engineering</a>
+              </li>
+              <li>
+                <a href="medicine.html"><i class="fas fa-heartbeat"></i> Medicine & Healthcare</a>
+              </li>
+              <li>
+                <a href="law.html"><i class="fas fa-gavel"></i> Law</a>
+              </li>
+              <li>
+                <a href="IELTS.html"><i class="fas fa-book"></i>IELTS</a>
+              </li>
+              <li>
+                <a href="PTE.html"><i class="fas fa-book"></i>PTE</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Our Services Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#"><i class="fas fa-user-graduate"></i> Career & Course
+                  Counseling</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-university"></i> University Selection &
+                  Applications</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-passport"></i> Visa Assistance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarships &
+                  Funding Guidance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-plane-departure"></i> Pre-Departure &
+                  Post-Arrival Support</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-handshake"></i> Channel Partner Support</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Study Destinations Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Study Destinations <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="./united states.html">
+                  <img src="../images/usa-flag.png" alt="USA" class="w-5 h-5"> United States</a>
+              </li>
+              <li>
+                <a href="./uk.html">
+                  <img src="../images/uk-flag.png" alt="USA" class="w-5 h-5"> United Kingdom</a>
+              </li>
+              <li>
+                <a href="./australia.html"><img src="../images/au-flag.png" alt="USA" class="w-5 h-5"> Australia</a>
+              </li>
+              <li>
+                <a href="./switzerland.html"><img src="../images/sw-flag.png" alt="USA" class="w-5 h-5"> Switzerland</a>
+              </li>
+              <li>
+                <a href="./germany.html"><img src="../images/ge-flag.png" alt="USA" class="w-5 h-5"> Germany</a>
+              </li>
+              <li class="dropdown-divider"></li>
+            </ul>
+          </li>
+          <li><a href="./success stories.html">Success Stories</a></li>
+          <li><a href="./News&Articles.html">News&Articles</a></li>
+          <li><a href="./contact us.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Study in Canada: Your Path to World-Class Education</h1>
+        <p>Discover opportunities for academic excellence, career growth, and cultural immersion in one of the world's most welcoming countries.</p>
+        <a href="#why-canada" class="btn">Explore Canada</a>
+      </div>
+    </section>
+
+    <!-- Why Canada Section -->
+    <section id="why-canada">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose Canada?</h2>
+        </div>
+        <div class="features">
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon">🎓</div>
+            <h3>Affordable Tuition & High-Quality Education</h3>
+            <p>Canadian universities offer lower tuition fees and living costs compared to the US and UK while maintaining exceptional educational standards.</p>
+          </div>
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon">💼</div>
+            <h3>Work During & After Studies</h3>
+            <p>Students can work part-time during studies and benefit from Post-Graduation Work Permit (PGWP) for up to three years after graduation.</p>
+          </div>
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon">🌎</div>
+            <h3>Quality of Life & Diversity</h3>
+            <p>Canada's safe, multicultural cities, excellent healthcare, and stunning landscapes offer students a high standard of living and strong career prospects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intakes Section -->
+    <section id="intakes" style="background-color: #f9f9f9;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Intakes and Deadlines</h2>
+        </div>
+        <div class="intakes-container animate-on-scroll">
+          <div class="intake-card">
+            <h3>Main Intake: September (Fall)</h3>
+            <p>The most popular intake with the widest range of courses and scholarships available.</p>
+          </div>
+          <div class="intake-card">
+            <h3>Other Intakes: January (Winter) & May (Spring)</h3>
+            <p>Fewer courses available compared to the Fall intake, but still good options for many programs.</p>
+          </div>
+          <div class="intake-card">
+            <h3>Application Deadlines</h3>
+            <p>Deadlines vary by university but typically close 6–12 months before the intake. It's recommended to start preparing at least a year in advance.</p>
+            <ul class="deadline-list">
+              <li>For September intake: Apply by December-January</li>
+              <li>For January intake: Apply by June-July</li>
+              <li>For May intake: Apply by October-November</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Costs Section -->
+    <section id="costs">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cost of Studying in Canada</h2>
+        </div>
+        <div class="costs-container">
+          <div class="cost-card animate-on-scroll">
+            <h3>Undergraduate Degree</h3>
+            <div class="cost-value">₹13-20 Lakhs/Year</div>
+            <ul class="cost-details">
+              <li><strong>Tuition Fees:</strong> ₹13-18 Lakhs/Year</li>
+              <li><strong>Living Expenses:</strong> ₹8-12 Lakhs/Year</li>
+              <li><strong>Duration:</strong> 3-4 Years</li>
+              <li><strong>Total Estimated Cost:</strong> ₹50-100 Lakhs</li>
+            </ul>
+          </div>
+          <div class="cost-card animate-on-scroll">
+            <h3>Postgraduate Degree</h3>
+            <div class="cost-value">₹15-25 Lakhs/Year</div>
+            <ul class="cost-details">
+              <li><strong>Tuition Fees:</strong> ₹15-22 Lakhs/Year</li>
+              <li><strong>Living Expenses:</strong> ₹8-12 Lakhs/Year</li>
+              <li><strong>Duration:</strong> 1-2 Years</li>
+              <li><strong>Total Estimated Cost:</strong> ₹25-50 Lakhs</li>
+            </ul>
+          </div>
+          <div class="cost-card animate-on-scroll">
+            <h3>Additional Expenses</h3>
+            <div class="cost-value">₹2-5 Lakhs/Year</div>
+            <ul class="cost-details">
+              <li><strong>Health Insurance:</strong> ₹0.5-1 Lakh/Year</li>
+              <li><strong>Books & Supplies:</strong> ₹0.5-1 Lakh/Year</li>
+              <li><strong>Transportation:</strong> ₹0.5-1 Lakh/Year</li>
+              <li><strong>Miscellaneous:</strong> ₹1-2 Lakhs/Year</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Section -->
+    <section id="working" style="background-color: #f9f9f9;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Working During & After Studies</h2>
+        </div>
+        <div class="working-container animate-on-scroll">
+          <div class="working-info">
+            <h3>Working During Study</h3>
+            <p>Canada offers flexible work options for international students, allowing them to gain real-world experience while studying:</p>
+            <ul class="working-list">
+              <li>Work up to 20 hours per week during regular academic sessions</li>
+              <li>Full-time work during scheduled breaks (winter and summer holidays)</li>
+              <li>On-campus and off-campus jobs available without a separate work permit</li>
+              <li>Co-op and internship opportunities available for many programs</li>
+            </ul>
+          </div>
+          <div class="working-info">
+            <h3>Post-Study Work Visa</h3>
+            <p>Canada is known for its strong post-graduate work opportunities and clear PR pathways:</p>
+            <ul class="working-list">
+              <li><strong>Post-Graduation Work Permit (PGWP):</strong> Stay and work in Canada for up to 3 years after graduation, depending on your study duration</li>
+              <li><strong>Pathway to Permanent Residency (PR):</strong> The Canadian Experience Class (CEC) under the Express Entry system allows international graduates to apply for PR</li>
+              <li><strong>Provincial Nominee Programs (PNPs):</strong> Many provinces have specific streams for international graduates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents">
+      <div class="container">
+        <div class="section-title">
+          <h2>Document Preparation Checklist</h2>
+        </div>
+        <div class="documents-container animate-on-scroll">
+          <div class="document-category">
+            <h3>For All Applicants</h3>
+            <ul class="checklist">
+              <li><input type="checkbox"> Valid Passport</li>
+              <li><input type="checkbox"> Academic Transcripts (original and translated copies if required)</li>
+              <li><input type="checkbox"> Degree Certificates (original and translated copies if required)</li>
+              <li><input type="checkbox"> English Proficiency Test Scores (IELTS, TOEFL, PTE, etc.)</li>
+              <li><input type="checkbox"> Statement of Purpose (SOP)</li>
+              <li><input type="checkbox"> Letters of Recommendation (typically 2-3)</li>
+              <li><input type="checkbox"> Curriculum Vitae/Resume</li>
+            </ul>
+          </div>
+          <div class="document-category">
+            <h3>Additional Documents (Based on Program)</h3>
+            <ul class="checklist">
+              <li><input type="checkbox"> Portfolio (for creative arts, architecture, etc.)</li>
+              <li><input type="checkbox"> Writing Samples (for research programs)</li>
+              <li><input type="checkbox"> GMAT/GRE Scores (for business/technical programs)</li>
+              <li><input type="checkbox"> Research Proposal (for research-based programs)</li>
+            </ul>
+          </div>
+          <div class="document-category">
+            <h3>VApplication Documents</h3>
+            <ul class="checklist">
+              <li><input type="checkbox"> Proof of Financial Support (bank statements, sponsorship letters)</li>
+              <li><input type="checkbox"> Medical Examination Records</li>
+              <li><input type="checkbox"> Police Clearance Certificate</li>
+              <li><input type="checkbox"> Passport-sized Photographs</li>
+              <li><input type="checkbox"> Letter of Acceptance from Canadian institution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="
+                background-color: white;
+                color: #023e65;
+                padding: 40px 0 20px;
+                border-top: 1px solid #eee;
+              ">
+      <div class="footer-grid" style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  gap: 30px;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 20px;
+                ">
+        <!-- Company Info Column -->
+        <div class="footer-col">
+          <a href="../index.html" class="logo" style="text-align: center">
+            <img src="../images\GTO.png" alt="Globetrek Overseas" style="height: 80px; margin-bottom: 20px" />
+          </a>
+          <p class="footer-about" style="
+                      text-align:  right center;
+                      line-height: 1.6;
+                      margin-bottom: 25px;
+                      color: #023e65;
+                    ">
+            <span style="font-weight: bold;"> We are a leading study abroad consultancy dedicated to helping
+              students achieve their international education dreams.</span>
+          </p>
+          <div class="footer-section">
+            <h3 style="
+                        text-align: right center;
+                        margin-bottom: 15px;
+                        font-size: 1.4rem;
+                        color: #015f18;
+                      ">
+              <span style="font-weight: bold;">Follow Us</span>
+            </h3>
+            <div class="social-links" style="
+                        display: flex;
+                        justify-content:  right center;
+                        gap: 15px;
+                        margin-bottom: 20px;
+                      ">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" class="social-icon" style="
+                          display: inline-block;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.5s ease;
+                        " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/globetrek-overseas/" class="social-icon" style="
+                          display: inline-block;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.5s ease;
+                        " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/919311331899" target="_blank" class="social-icon" style="
+                          display: inline-block;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.3s ease;
+                        " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h3 class="footer-links-title font-bold !text-[#023e65]" style="
+                      font-size: 1.2rem;
+                      margin-bottom: 20px;
+                      position: relative;
+                      padding-bottom: 10px;
+                      color: #333;
+                    ">
+            Quick Links
+            <span style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 60px;
+                        height: 3px;
+                        background-color: #02406a;
+                      "></span>
+          </h3>
+          <ul class="footer-links" style="list-style: none; padding: 0">
+            <li style="margin-bottom: 10px">
+              <a href="./pages/about us.html" style="
+                          color: #01500c;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">About Us</span></a>
+
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Our Services</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Study Destinations</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./pages/success stories.html" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Success Stories</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./pages/News&Articles.html" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">News&Article</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./pages/contact us.html" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer-col">
+          <h3 class="footer-contact-title font-bold !text-[#023e65]" style="
+                      font-size: 1.2rem;
+                      margin-bottom: 20px;
+                      position: relative;
+                      padding-bottom: 10px;
+                      color: #333;
+                    ">
+            Contact Us
+            <span style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 50px;
+                        height: 2px;
+                        background-color: #023e65;
+                      "></span>
+          </h3>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0; line-height: 1.5; color: #023e65">
+              <span style="font-weight: bold;"> 618 Tower-A, ATS BOUQUET Block B<br>Sector 132 Noida,<br> Uttar
+                Pradesh 201304</span>
+            </p>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <div>
+              <p style="margin: 0 0 5px 0">
+                <a href="tel:+919311331899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 93113 31899</span></a>
+              </p>
+              <p style="margin: 0">
+                <a href="tel:+919211313899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 92113 13899</span></a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-envelope" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0">
+              <a href="mailto:Headoffice@globetrekoverseas.com" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">Headoffice@globetrekoverseas.com</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="
+                  text-align: center;
+                  padding-top: 30px;
+                  margin-top: 30px;
+                  border-top: 1px solid #eee;
+                ">
+        <p style="margin: 0; font-size: 0.9rem; color: #023e65">
+          <span style="font-weight: bold;">&copy;2023 Globetrek Overseas. All Rights Reserved.</span>
+        </p>
+      </div>
+    </footer>
+    <!-- Modal/Popup -->
+    <div class="modal" id="info-modal">
+      <div class="modal-content">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <h2 id="modal-title">Modal Title</h2>
+        <div id="modal-content">
+          <p>This is the modal content.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('nav-menu').classList.toggle('show');
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            document.getElementById('nav-menu').classList.remove('show');
+          }
+        });
+      });
+
+      // Animation on scroll
+      function checkScroll() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+
+          if (elementPosition < screenPosition) {
+            element.classList.add('visible');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkScroll);
+      window.addEventListener('load', checkScroll);
+
+      // Modal functionality
+      const modal = document.getElementById('info-modal');
+      const closeModal = document.getElementById('close-modal');
+
+      closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+      // Example of how to open a modal (can be customized based on your needs)
+      function openModal(title, content) {
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-content').innerHTML = content;
+        modal.style.display = 'flex';
+      }
+
+      // You can trigger modals based on certain actions, for example:
+      // document.getElementById('some-element').addEventListener('click', function() {
+      //     openModal('Title', '<p>Your content here</p>');
+      // });
+    </script>
+  </body>
+</html>

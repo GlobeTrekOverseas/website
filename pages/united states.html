@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study in USA - GlobeTrek Overseas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Base Styles */
+      :root {
+        --primary: #1a365d;
+        /* Dark blue */
+        --secondary: #2b6cb0;
+        /* Medium blue */
+        --accent: #1a7f3d;
+        /* Dark green */
+        --light: #f7fafc;
+        /* Light background */
+        --dark: #2d3748;
+        /* Dark text */
+        --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+
+      body.loaded {
+        opacity: 1;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        color: var(--primary);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        animation: slideDown 0.7s ease forwards;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 70px;
+        margin-right: 20px;
+        transition: var(--transition);
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+        position: relative;
+      }
+
+      nav ul li a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        padding: 8px 15px;
+        border-radius: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      nav ul li a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(43, 108, 176, 0.1), transparent);
+        transition: var(--transition);
+      }
+
+      nav ul li a:hover::before {
+        left: 100%;
+      }
+
+      nav ul li a:hover {
+        background-color: var(--light);
+        transform: translateY(-2px);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--primary);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn:hover {
+        transform: rotate(90deg);
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 80vh;
+        background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), url('../images/united\ state.png') no-repeat center center/cover;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--secondary), var(--accent));
+        animation: gradientLine 3s infinite linear;
+      }
+
+      @keyframes gradientLine {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        transform: translateY(50px);
+        opacity: 0;
+        animation: heroFadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes heroFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h2 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent), #13632b);
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(26, 127, 61, 0.3);
+        transform: translateY(0);
+      }
+
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.6s;
+        z-index: 1;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(26, 127, 61, 0.4);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 100px 0;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.8rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        font-size: 1.2rem;
+        color: var(--dark);
+        max-width: 700px;
+        margin: 30px auto 0;
+      }
+
+      /* Why USA Section */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: var(--transition);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transform: translateY(0);
+      }
+
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        transition: var(--transition);
+        z-index: -1;
+        opacity: 0;
+      }
+
+      .feature-card:hover::before {
+        height: 100%;
+        opacity: 1;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        color: white;
+      }
+
+      .feature-card:hover .feature-icon {
+        color: white;
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .feature-card:hover h3 {
+        color: white;
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        color: var(--secondary);
+        margin-bottom: 25px;
+        transition: var(--transition);
+      }
+
+      .feature-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+        transition: var(--transition);
+      }
+
+      /* Intakes Section */
+      .intakes-container {
+        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .intakes-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%232b6cb0" opacity="0.1" d="M50,0 L100,50 L50,100 L0,50 Z"></path></svg>') no-repeat;
+        background-size: contain;
+      }
+
+      .intake-card {
+        margin-bottom: 30px;
+        border-left: 4px solid var(--secondary);
+        padding-left: 25px;
+        position: relative;
+        transition: var(--transition);
+        transform: translateX(0);
+      }
+
+      .intake-card:hover {
+        transform: translateX(10px);
+      }
+
+      .intake-card h3 {
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+
+      .intake-card p {
+        color: var(--dark);
+      }
+
+      /* Costs Section */
+      .costs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .cost-card {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cost-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+      }
+
+      .cost-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .cost-card h3 {
+        color: var(--primary);
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+      }
+
+      .cost-amount {
+        font-size: 2.5rem;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .cost-amount::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary);
+      }
+
+      /* Working Section */
+      .working-container {
+        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .working-info {
+        margin-bottom: 40px;
+        padding: 25px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+
+      .working-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .working-info h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .working-info h3 i {
+        margin-right: 10px;
+        color: var(--secondary);
+      }
+
+      /* Documents Section */
+      .documents-container {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .document-list {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .document-list li {
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .document-list li:hover {
+        background-color: #f8f9fa;
+        padding-left: 15px;
+      }
+
+      .document-list li:last-child {
+        border-bottom: none;
+      }
+
+      .document-list i {
+        color: var(--secondary);
+        margin-right: 15px;
+        font-size: 1.3rem;
+        width: 30px;
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .document-list li:hover i {
+        transform: scale(1.2);
+        color: var(--accent);
+      }
+
+      /* Tooltip */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        margin-left: 10px;
+        color: var(--secondary);
+        cursor: help;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: var(--dark);
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 0.9rem;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background: #13632b;
+        transform: translateY(-5px);
+      }
+
+      /* Modal/Popup */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1100;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: 15px;
+        padding: 40px;
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        transform: scale(0.9);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .modal.active .modal-content {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #999;
+        transition: var(--transition);
+      }
+
+      .close-modal:hover {
+        color: var(--accent);
+        transform: rotate(90deg);
+      }
+
+      .modal-content h2 {
+        color: var(--primary);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .modal-content form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .modal-content input,
+      .modal-content select {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .modal-content input:focus,
+      .modal-content select:focus {
+        border-color: var(--secondary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Progress bar */
+      .progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: transparent;
+        z-index: 1001;
+      }
+
+      .progress-bar {
+        height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--secondary));
+        width: 0%;
+        transition: width 0.2s ease;
+      }
+
+      /* Page Load Animation */
+      @keyframes pageLoad {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-load {
+        animation: pageLoad 0.8s ease forwards;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero h2 {
+          font-size: 2.8rem;
+        }
+
+        nav ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          flex-direction: column;
+          padding: 20px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-20px);
+          opacity: 0;
+          transition: var(--transition);
+        }
+
+        nav ul.active {
+          display: flex;
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        nav ul li {
+          margin: 15px 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .section-title h2 {
+          font-size: 2.3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: 80vh;
+        }
+
+        .hero h2 {
+          font-size: 2.3rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .feature-card,
+        .cost-card {
+          padding: 30px 20px;
+        }
+
+        .intakes-container,
+        .working-container,
+        .documents-container {
+          padding: 30px 20px;
+        }
+
+        section {
+          padding: 80px 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero {
+          height: 70vh;
+        }
+
+        .hero h2 {
+          font-size: 2rem;
+        }
+
+        .btn {
+          padding: 12px 30px;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <!-- Header styles -->
+    <style>
+      .header {
+        background-color: white;
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: #024672;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-menu a:hover {
+        color: #2c3e50;
+      }
+
+      .logo img {
+        height: 80px;
+        width: auto;
+      }
+
+      /* Dropdown Styles */
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: var(--shadow);
+        border-radius: 5px;
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 100;
+        list-style: none;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .dropdown-menu li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      .dropdown-menu a:hover {
+        background: var(--light);
+        color: var(--secondary);
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: #eee;
+        margin: 5px 0;
+      }
+
+      /* Mobile Navigation */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--secondary);
+        cursor: pointer;
+      }
+    </style>
+    <!-- Footer -->
+    <style>
+      .footer {
+        background-color: white;
+        padding: 50px 0 20px;
+        color: #024c7d;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-col {
+        margin-bottom: 20px;
+      }
+
+      .footer-col h3 {
+        color: #02436f;
+        margin-bottom: 20px;
+        font-size: 1.125rem;
+      }
+
+      .footer-about {
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #02446f;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #2c3e50;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #003c64;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        color: #034571;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: #2c3e50;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 30px;
+        border-top: 1px solid #eee;
+        color: #013c63;
+        font-size: 0.875rem;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="../index.html" class="logo">
+          <img src="../images\GTO.png" alt="Globetrek Overseas" class="w-full w-auto h-[68px]" />
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="./pages/about us.html">About Us</a></li>
+
+          <!-- Courses Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="business-management.html"><i class="fas fa-chart-line"></i> Business & Management</a>
+              </li>
+              <li>
+                <a href="engineering.html"><i class="fas fa-cogs"></i> Engineering</a>
+              </li>
+              <li>
+                <a href="medicine.html"><i class="fas fa-heartbeat"></i> Medicine & Healthcare</a>
+              </li>
+              <li>
+                <a href="law.html"><i class="fas fa-gavel"></i> Law</a>
+              </li>
+              <li>
+                <a href="IELTS.html"><i class="fas fa-book"></i>IELTS</a>
+              </li>
+              <li>
+                <a href="PTE.html"><i class="fas fa-book"></i>PTE</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Our Services Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#"><i class="fas fa-user-graduate"></i> Career & Course
+                  Counseling</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-university"></i> University Selection &
+                  Applications</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-passport"></i> Visa Assistance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-hand-holding-usd"></i> Scholarships &
+                  Funding Guidance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-plane-departure"></i> Pre-Departure &
+                  Post-Arrival Support</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-handshake"></i> Channel Partner Support</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Study Destinations Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">Study Destinations <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="./united states.html">
+                  <img src="../images/usa-flag.png" alt="USA" class="w-5 h-5"> United States</a>
+              </li>
+              <li>
+                <a href="./uk.html">
+                  <img src="../images/uk-flag.png" alt="USA" class="w-5 h-5"> United Kingdom</a>
+              </li>
+              <li>
+                <a href="./australia.html"><img src="../images/au-flag.png" alt="USA" class="w-5 h-5"> Australia</a>
+              </li>
+              <li>
+                <a href="./switzerland.html"><img src="../images/sw-flag.png" alt="USA" class="w-5 h-5"> Switzerland</a>
+              </li>
+              <li>
+                <a href="./germany.html"><img src="../images/ge-flag.png" alt="USA" class="w-5 h-5"> Germany</a>
+              </li>
+              <li class="dropdown-divider"></li>
+            </ul>
+          </li>
+          <li><a href="./success stories.html">Success Stories</a></li>
+          <li><a href="./News&Articles.html">News&Articles</a></li>
+          <li><a href="./contact us.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Study in United States</h2>
+        <p>Explore world-class education, cutting-edge research, and unparalleled career opportunities in the United States</p>
+        <a href="./contact us.html" class="btn" id="hero-consultation-btn">Start Your Application</a>
+      </div>
+    </section>
+
+    <!-- Why USA Section -->
+    <section id="why-usa">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose United States?</h2>
+          <p>Discover the advantages of studying in one of the world's leading academic and innovation hubs</p>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Top-Ranked Universities</h3>
+            <p>The US is home to the Ivy League and globally ranked institutions, excelling in STEM, business, healthcare, and social sciences courses.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Diverse Course Offerings</h3>
+            <p>Flexible study options and interdisciplinary programmes allow students to combine interests across multiple fields.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Work and Internship Opportunities</h3>
+            <p>Curricular Practical Training (CPT) and Optional Practical Training (OPT) programmes offer valuable work experience, with OPT allowing up to 36 months of post-graduation employment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intakes Section -->
+    <section id="intakes" style="background-color: #f1f5f9;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Intakes and Deadlines</h2>
+          <p>Plan your application timeline with our comprehensive intake information</p>
+        </div>
+        <div class="intakes-container">
+          <div class="intake-card">
+            <h3>Main Intake - August/September (Fall)</h3>
+            <p>The most popular intake with the widest range of courses available.</p>
+          </div>
+          <div class="intake-card">
+            <h3>Other Intake - January (Spring)</h3>
+            <p>Fewer course options available for select programmes.</p>
+          </div>
+          <div class="intake-card">
+            <h3>Application Deadlines</h3>
+            <p>• Early Decision: November – For students who want to commit to one university early<br>
+              • Regular Decision: December – January – Standard deadline for most universities<br>
+              • Rolling Admissions: Varies by university – Some schools accept applications throughout the year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Costs Section -->
+    <section id="costs">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cost of Studying in USA</h2>
+          <p>Understand the expenses involved in pursuing education in the United States</p>
+        </div>
+        <div class="costs-container">
+          <div class="cost-card">
+            <h3>Undergraduate Degree</h3>
+            <div class="cost-amount">₹12 Lakhs/year</div>
+            <p>Tuition fees (minimum)/year</p>
+            <div class="cost-amount">₹15 Lakhs/year</div>
+            <p>Living expenses (minimum)/year</p>
+            <div class="cost-amount">₹108 Lakhs</div>
+            <p>Minimum budget for full course (4 years)</p>
+          </div>
+          <div class="cost-card">
+            <h3>Postgraduate Degree</h3>
+            <div class="cost-amount">₹15 Lakhs/year</div>
+            <p>Tuition fees (minimum)/year</p>
+            <div class="cost-amount">₹15 Lakhs/year</div>
+            <p>Living expenses (minimum)/year</p>
+            <div class="cost-amount">₹60 Lakhs</div>
+            <p>Minimum budget for full course (2 years)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Section -->
+    <section id="working" style="background-color: #f1f5f9;">
+      <div class="container">
+        <div class="section-title">
+          <h2>Working During Study</h2>
+          <p>Learn about work opportunities for international students in the USA</p>
+        </div>
+        <div class="working-container">
+          <div class="working-info">
+            <h3><i class="fas fa-briefcase"></i> Work During Studies</h3>
+            <p>International students on an F-1 Student Visa can work:</p>
+            <p>• Up to 20 hours per week on campus during term time<br>
+              • Full-time during holidays<br>
+              • Off-campus work is only available through the CPT or OPT programmes</p>
+            <p>Many students find work in research assistantships, tutoring, university departments, or campus facilities.</p>
+          </div>
+          <div class="working-info">
+            <h3><i class="fas fa-file-contract"></i> Post-Study Work Visa</h3>
+            <p>The Optional Practical Training (OPT) allows graduates to work in the US for up to 12 months (or 36 months for STEM graduates) after completing their studies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents">
+      <div class="container">
+        <div class="section-title">
+          <h2>Documentation Preparation Checklist</h2>
+          <p>Ensure you have all the necessary documents for your US student visa application</p>
+        </div>
+        <div class="documents-container">
+          <h3>Essential Documents for All Students:</h3>
+          <ul class="document-list">
+            <li><i class="fas fa-passport"></i> Valid Passport <span class="tooltip">?<span class="tooltiptext">Must be valid for at least 6 months beyond your intended stay</span></span></li>
+            <li><i class="fas fa-file-alt"></i> I-20 Form from the US Institution</li>
+            <li><i class="fas fa-camera"></i> Passport-sized Photographs <span class="tooltip">?<span class="tooltiptext">Recent color photographs meeting US visa requirements</span></span></li>
+            <li><i class="fas fa-receipt"></i> Proof of SEVIS Fee Payment</li>
+            <li><i class="fas fa-money-bill-wave"></i> Proof of Financial Capacity <span class="tooltip">?<span class="tooltiptext">Evidence of funds for tuition, living, and other expenses</span></span></li>
+            <li><i class="fas fa-stethoscope"></i> Health Insurance <span class="tooltip">?<span class="tooltiptext">Mandatory health insurance as per university requirements</span></span></li>
+          </ul>
+
+          <h3>Academic Documents:</h3>
+          <ul class="document-list">
+            <li><i class="fas fa-certificate"></i> Academic Transcripts and Certificates <span class="tooltip">?<span class="tooltiptext">Official records from your previous educational institutions</span></span></li>
+            <li><i class="fas fa-language"></i> English Language Proficiency Test Scores (TOEFL/IELTS) <span class="tooltip">?<span class="tooltiptext">Minimum score requirements vary by institution and program</span></span></li>
+            <li><i class="fas fa-edit"></i> Statement of Purpose (SOP) <span class="tooltip">?<span class="tooltiptext">Essay explaining your academic and career goals</span></span></li>
+            <li><i class="fas fa-file-signature"></i> Letters of Recommendation (LORs) <span class="tooltip">?<span class="tooltiptext">References from academic or professional mentors</span></span></li>
+            <li><i class="fas fa-file-invoice"></i> CV/Resume <span class="tooltip">?<span class="tooltiptext">Detailed summary of your academic and professional background</span></span></li>
+          </ul>
+
+          <button class="btn" id="consultation-btn">Book Free Consultation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="
+                background-color: white;
+                color: #023e65;
+                padding: 40px 0 20px;
+                border-top: 1px solid #eee;
+              ">
+      <div class="footer-grid" style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  gap: 30px;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 20px;
+                ">
+        <!-- Company Info Column -->
+        <div class="footer-col">
+          <a href="../index.html" class="logo" style="text-align: center">
+            <img src="../images\GTO.png" alt="Globetrek Overseas" style="height: 80px; margin-bottom: 20px" />
+          </a>
+          <p class="footer-about" style="
+                      text-align:  right center;
+                      line-height: 1.6;
+                      margin-bottom: 25px;
+                      color: #023e65;
+                    ">
+            <span style="font-weight: bold;"> We are a leading study abroad consultancy dedicated to helping
+              students achieve their international education dreams.</span>
+          </p>
+          <div class="footer-section">
+            <h3 style="
+                        text-align: right center;
+                        margin-bottom: 15px;
+                        font-size: 1.4rem;
+                        color: #015f18;
+                      ">
+              <span style="font-weight: bold;">Follow Us</span>
+            </h3>
+            <div class="social-links" style="
+                        display: flex;
+                        justify-content:  right center;
+                        gap: 15px;
+                        margin-bottom: 20px;
+                      ">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/globetrekoverseas?igsh=MWp4Nzk2M3J2NnhjNw==" class="social-icon" style="
+                          display: inline-block;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.5s ease;
+                        " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/globetrek-overseas/" class="social-icon" style="
+                          display: inline-block;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.5s ease;
+                        " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/919311331899" target="_blank" class="social-icon" style="
+                          display: inline-block;
+                          width: 40px;
+                          height: 40px;
+                          transition: all 0.3s ease;
+                        " onclick="animateIcon(this)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 100%; height: 100%; object-fit: contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h3 class="footer-links-title font-bold !text-[#023e65]" style="
+                      font-size: 1.2rem;
+                      margin-bottom: 20px;
+                      position: relative;
+                      padding-bottom: 10px;
+                      color: #333;
+                    ">
+            Quick Links
+            <span style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 60px;
+                        height: 3px;
+                        background-color: #02406a;
+                      "></span>
+          </h3>
+          <ul class="footer-links" style="list-style: none; padding: 0">
+            <li style="margin-bottom: 10px">
+              <a href="./pages/about us.html" style="
+                          color: #01500c;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">About Us</span></a>
+
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Our Services</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Study Destinations</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./pages/success stories.html" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Success Stories</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./pages/News&Articles.html" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">News&Article</span></a>
+            </li>
+            <li style="margin-bottom: 10px">
+              <a href="./pages/contact us.html" style="
+                          color: #2D6F41;
+                          text-decoration: none;
+                          transition: color 0.3s;
+                        "> <span style="font-weight: bold;">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer-col">
+          <h3 class="footer-contact-title font-bold !text-[#023e65]" style="
+                      font-size: 1.2rem;
+                      margin-bottom: 20px;
+                      position: relative;
+                      padding-bottom: 10px;
+                      color: #333;
+                    ">
+            Contact Us
+            <span style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 50px;
+                        height: 2px;
+                        background-color: #023e65;
+                      "></span>
+          </h3>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0; line-height: 1.5; color: #023e65">
+              <span style="font-weight: bold;"> 618 Tower-A, ATS BOUQUET Block B<br>Sector 132 Noida,<br> Uttar
+                Pradesh 201304</span>
+            </p>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <div>
+              <p style="margin: 0 0 5px 0">
+                <a href="tel:+919311331899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 93113 31899</span></a>
+              </p>
+              <p style="margin: 0">
+                <a href="tel:+919211313899" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">+91 92113 13899</span></a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-item" style="display: flex; margin-bottom: 15px">
+            <i class="fas fa-envelope" style="margin-right: 10px; margin-top: 5px; color: #023e65"></i>
+            <p style="margin: 0">
+              <a href="mailto:Headoffice@globetrekoverseas.com" style="color: #023e65; text-decoration: none"> <span style="font-weight: bold;">Headoffice@globetrekoverseas.com</span></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="
+                  text-align: center;
+                  padding-top: 30px;
+                  margin-top: 30px;
+                  border-top: 1px solid #eee;
+                ">
+        <p style="margin: 0; font-size: 0.9rem; color: #023e65">
+          <span style="font-weight: bold;">&copy;2023 Globetrek Overseas. All Rights Reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Consultation Modal -->
+    <div class="modal" id="consultation-modal">
+      <div class="modal-content">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <h2>Book a Free Consultation</h2>
+        <p>Fill in your details and our education experts will contact you shortly.</p>
+        <form>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="tel" placeholder="Your Phone Number" required>
+          <select required>
+            <option value="" disabled selected>Select Preferred Destination</option>
+            <option value="uk">United Kingdom</option>
+            <option value="usa">United States</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+          </select>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Page load animation
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('loaded');
+
+        // Animate sections on scroll
+        const sections = document.querySelectorAll('section');
+
+        function checkScroll() {
+          sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerBottom = window.innerHeight * 0.8;
+
+            if (sectionTop < triggerBottom) {
+              section.classList.add('visible');
+            }
+          });
+        }
+
+        // Initial check
+        checkScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // Smooth Scrolling for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            navMenu.classList.remove('active');
+          }
+        });
+      });
+
+      // Modal functionality
+      const consultationBtn = document.getElementById('consultation-btn');
+      const heroConsultationBtn = document.getElementById('hero-consultation-btn');
+      const consultationModal = document.getElementById('consultation-modal');
+      const closeModal = document.getElementById('close-modal');
+
+      consultationBtn.addEventListener('click', () => {
+        consultationModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      heroConsultationBtn.addEventListener('click', () => {
+        consultationModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      closeModal.addEventListener('click', () => {
+        consultationModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener('click', (e) => {
+        if (e.target === consultationModal) {
+          consultationModal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      // Back to top button
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+
+        // Progress bar
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+      });
+
+      backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Animation on scroll for cards
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .cost-card, .intake-card, .working-info');
+
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+
+          if (elementPosition < screenPosition) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // Set initial state for animated elements
+      document.querySelectorAll('.feature-card, .cost-card, .intake-card, .working-info').forEach(element => {
+        element.style.opacity = 0;
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+
+      window.addEventListener('scroll', animateOnScroll);
+      // Trigger once on load
+      window.addEventListener('load', animateOnScroll);
+
+      // Tooltip initialization
+      const tooltips = document.querySelectorAll('.tooltip');
+
+      tooltips.forEach(tooltip => {
+        tooltip.addEventListener('mouseenter', function (e) {
+          const tooltipText = this.querySelector('.tooltiptext');
+          tooltipText.style.visibility = 'visible';
+          tooltipText.style.opacity = 1;
+        });
+
+        tooltip.addEventListener('mouseleave', function (e) {
+          const tooltipText = this.querySelector('.tooltiptext');
+          tooltipText.style.visibility = 'hidden';
+          tooltipText.style.opacity = 0;
+        });
+      });
+
+      // Form submission
+      const form = document.querySelector('form');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your inquiry! Our team will contact you shortly.');
+        consultationModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
